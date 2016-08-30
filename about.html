@@ -1,0 +1,148 @@
+---
+layout: page
+title: "About"
+description: "Hey, this is JDOS."
+header-img: "img/about-bg.jpg"
+---
+
+<!-- Language Selector -->
+<select onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> 中文 Chinese </option>
+    <option value="1"> 英文 English </option>
+</select>
+
+<!-- Chinese Version -->
+<div class="zh post-container">
+
+    <!--copied from markdown -->
+    <blockquote><p>踏实做事，匠心品格。</p></blockquote>
+
+    <p>Hey，我们是<strong>JDOS</strong>(<strong>Jingdong Datacenter Operating System</strong>)团队。团队，自2013年于<strong>中国·南京</strong>组建，现隶属于<a href="http://www.jd.com">京东</a>云平台事业部。</p>
+
+    <p>目前，我们团队有近30人，于<strong>南京·江宁</strong>进行研发办公，自2014年负责京东的私有云研发，经历了2014年双十一的初尝试、2015年发展及2016年的大规模落地，目前运营有<strong>150K+</strong>的容器集群。</p>
+
+    <p>我们目前的私有云技术是基于openstack进行容器集群管理，现在积极尝试使用更为轻量的kubernetes进行替换。</p>
+
+    <p>在这里，我们希望能够分享我们的一些知识、经验甚至是教训，希望能够给业界的其他同学们一点帮助。同时，我们也欢迎业界同学们不吝赐教，同我们进行交流。</p>
+
+    <h5>Pages</h5>
+
+    <ul>
+    <li><a href="https://github.com/JDOSTech">JDOSTech github主页</a></li>
+    </ul>
+</div>
+
+<!-- English Version -->
+<div class="en post-container">
+    <blockquote><p>Talk less, do more.</p></blockquote>
+
+    <p>Hi, we are <strong>JDOS</strong>(<strong>Jingdong Datacenter Operating System</strong>) team. We are responsible for the infrastructure platform of the private cloud in <a href="http://www.jd.com">JD.COM</a>. We have <strong>150K+</strong> docker containers online right now.</p>
+
+    <h5>Pages</h5>
+
+    <ul>
+    <li><a href="https://github.com/JDOSTech">JDOSTech github page</a></li>
+    </ul>
+</div>
+
+<!-- Handle Language Change -->
+<script type="text/javascript">
+    // get nodes
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    var $select = document.querySelector("select");
+
+    // bind hashchange event
+    window.addEventListener('hashchange', _render);
+
+    // handle render
+    function _render(){
+        var _hash = window.location.hash;
+        // en
+        if(_hash == "#en"){
+            $select.selectedIndex = 1;
+            $en.style.display = "block";
+            $zh.style.display = "none";
+        // zh by default
+        }else{
+            // not trigger onChange, otherwise cause a loop call.
+            $select.selectedIndex = 0;
+            $zh.style.display = "block";
+            $en.style.display = "none";
+        }
+    }
+
+    // handle select change
+    function onLanChange(index){
+        if(index == 0){
+            window.location.hash = "#zh"
+        }else{
+            window.location.hash = "#en"
+        }
+    }
+
+    // init
+    _render();
+</script>
+
+
+
+{% if site.duoshuo_username %}
+<!-- 多说评论框 start -->
+<div class="comment">
+    <div class="ds-thread"
+    {% if site.duoshuo_username == "huxblog" %}
+        data-thread-id="1187623191091085319"
+    {% else %}
+        data-thread-key="{{site.duoshuo_username}}/about"
+    {% endif %}
+
+    data-title="{{page.title}}"
+    data-url="{{site.url}}/about/"></div>
+</div>
+<!-- 多说评论框 end -->
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User hacking by Hux
+    var _user = '{{site.duoshuo_username}}';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+{% endif %}
+
+
+{% if site.disqus_username %}
+<!-- disqus 评论框 start -->
+<div class="comment">
+    <div id="disqus_thread" class="disqus-thread">
+
+    </div>
+</div>
+<!-- disqus 评论框 end -->
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "{{site.disqus_username}}";
+    var disqus_identifier = "{{site.disqus_username}}/{{page.url}}";
+    var disqus_url = "{{site.url}}{{page.url}}";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+{% endif %}
