@@ -1,6 +1,6 @@
 # Site settings
 title: JDOSTech Blog
-SEOTitle: Jingdong Datacenter Operating System 的博客|JDOSTech Blog
+SEOTitle: Jingdong Datacenter Operating System 的博客 | JDOSTech Blog
 header-img: img/home-bg.jpg
 email: JDOSTech@gmail.com
 description: "Jingdong Datacenter Operating System, 关于数据中心、基础设施、平台的技术 | 这里是 JDOSTech 的团队技术博客。"
@@ -83,7 +83,8 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 # Friends
 friends: [
     {
-        title: "JD.com",
-        href: "http://http://www.jd.com//"
+        title: "李旦的博客",
+        href: "http://danielfresh.github.io/"
     }
+
 ]
