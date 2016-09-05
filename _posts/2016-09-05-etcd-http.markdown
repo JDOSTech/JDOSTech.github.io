@@ -14,6 +14,8 @@ tags:
 
 # etcd源码分析之HTTP
 
+etcd Version: 3.0.4
+
 直接上图
 
 ![](/img/2016-09-05-etcd-http/http.png)
