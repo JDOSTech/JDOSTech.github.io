@@ -4,7 +4,7 @@ title:      "etcd源码分析之HTTP"
 subtitle:   " \"etcd source code notes\""
 date:       2016-09-05 00:00:00
 author:     "liangxiaoping"
-header-img: "/img/2016-09-05-etcd-http/header.jpg"
+header-img: "img/2016-09-05-etcd-http/header.jpg"
 catalog: true
 tags:
     - etcd
