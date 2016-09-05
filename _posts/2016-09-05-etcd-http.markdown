@@ -1,0 +1,19 @@
+---
+layout:     post
+title:      "etcd源码分析之HTTP"
+subtitle:   " \"etcd source code notes\""
+date:       2016-09-05 00:00:00
+author:     "liangxiaoping"
+header-img: "/img/2016-09-05-etcd-http/header.jpg"
+catalog: true
+tags:
+    - etcd
+---
+
+> etcd: A distributed, reliable key-value store for the most critical data of a distributed system.
+
+# etcd源码分析之HTTP
+
+直接上图
+
+![](/img/2016-09-05-etcd-http/http.png)
