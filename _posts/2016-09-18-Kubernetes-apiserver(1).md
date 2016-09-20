@@ -30,6 +30,7 @@ API Server对外提供Kubernetes API，作为Kubernetes系统的入口，封装�
 
 ## 4. 集群安全机制
 k8s集群的安全机制比较完备，包括API Server认证、授权、准入控制和保护敏感信息的Secret机制。
+
 ### 4.1 Authentication认证
 - CA认证：API Server启动参数 --client-ca-file、--tls-cert-file、--tls-private-key-file 分别指向根证书文件、服务端证书文件和私钥文件；客户端参数 certificate-authoritiy、client-certificate、client-key 分别指向根证书文件、客户端证书文件和私钥文件
 - Token认证：API Server启动参数 --token-auth-file 指向存储Token的Token文件（包含3列的csv文件，第一列为Token，第二列为用户名，第三列为用户UID）；HTTP请求头中的Authorization域需包含“Bearer SOMETOKEN”字段
