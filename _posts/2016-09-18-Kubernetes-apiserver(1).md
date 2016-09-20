@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Kubernetes API Server分析（1）"
+title:      "Kubernetes API Server功能分析"
 subtitle:   "apiserver功能分析"
 date:       2016-09-18 00:00:00
 author:     "lvjiangzhao"
@@ -46,10 +46,13 @@ k8s集群的安全机制比较完备，包括API Server认证、授权、准入�
 - ABAC（Attribute-Based Access Control）：基于属性的访问控制。参数 --authorization-policy-file 指定授权策略文件（每一行都是一个json对象）
   *examples：*
   用户alice可以对所有资源做任何操作：
+
 ```json
 {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user": "alice", "namespace": "*", "resource": "*", "apiGroup": "*"}}
 ```
+
   用户bob可以读取projectCaribou命名空间中的所有pod：
+
 ```json
 {"apiVersion": "abac.authorization.kubernetes.io/v1beta1", "kind": "Policy", "spec": {"user": "bob", "namespace": "projectCaribou", "resource": "pods", "readonly": true}}
 ```
