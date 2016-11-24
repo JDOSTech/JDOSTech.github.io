@@ -1,6 +1,6 @@
 # JDOSTech.github.io
 
-我们是**JDOS**(**Jingdong Datacenter Operating System**)团队，自2013年于南京组建，现隶属于[京东](http://www.jd.com)云平台事业部。
+我们是**JDOS**(**Jingdong Datacenter Operating System**)团队，自2012年9月南京研发筹备组建，现隶属于[京东](http://www.jd.com)商城研发部。
 
 目前，我们团队有近30人，于**南京·江宁**进行研发办公，自2014年负责京东的私有云研发，经历了2014年双十一的初尝试、2015年发展及2016年的大规模落地，目前运营有150K+的容器集群。
 
